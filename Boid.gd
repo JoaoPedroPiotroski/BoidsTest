@@ -4,10 +4,12 @@ var local_boids := []
 var local_positions = []
 var local_range := 55.0
 var speed = 300
-var separation_bias = 0.5
+var separation_bias = 0.7
 var alignment_bias = 0.3
 var cohesion_bias = 0.1
 var randomness = 0.2
+
+var color : Color = Color.white
 
 var center_of_weight : Vector2
 var move_direction : Vector2
@@ -15,6 +17,17 @@ var move_direction : Vector2
 func _ready():
 	add_to_group("boids")
 	rotation_degrees = rand_range(0, 360)
+	color = Color(
+		rand_range(0, 1),
+		rand_range(0, 1),
+		rand_range(0, 1)
+	)
+	$Polygon2D.color = color
+	$Polygon2D2. color = color
+	
+	$Polygon2D3. color = color
+	
+	$Polygon2D4. color = color
 	
 func _draw():
 	return
